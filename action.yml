@@ -1,4 +1,4 @@
-name: 'Amazon ECS "Render Task Definition" Action for GitHub Actions'
+name: 'F1V Amazon ECS "Render Task Definition" Action for GitHub Actions'
 description: 'Inserts a container image URI into a container definition in an Amazon ECS task definition JSON file, creating a new file.'
 branding:
   icon: 'cloud'
@@ -12,6 +12,12 @@ inputs:
     required: true
   image:
     description: 'The URI of the container image to insert into the ECS task definition'
+    required: true
+  mount-points:
+    description: 'Optional Container volumes to mount, stringified object: [{"container":"name","path":"/container/path","source":"source-volume-name"}]'
+    required: true
+  volumes:
+    description: 'Optional volumes to mount, "[{"name": "source-volume-name", "path":"/host/source/path"}]'
     required: true
 outputs:
   task-definition:
